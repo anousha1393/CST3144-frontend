@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Learn Lounge</title>
+    <!-- Vue.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <div id="app">
+
+        <!-- About Us Section -->
+        <section class="about-section">
+            <h2>About Us</h2>
+            <p>
+                Welcome to Learn Lounge! </p>
+            <p> We are dedicated to helping students find the best after-school activities and classes that suit their interests and passions.
+            </p><p>   Our platform is built to connect families with a variety of learning experiences 
+            </p><p>     whether it's sports, arts, or academic-focused classes.
+            </p>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="images/mission.png" alt="Mission image">
+                    <h2 class="mission">Our Mission</h2>
+                  </div>
+                  <div class="flip-card-back">
+                    <p class="mission-text">"To inspire, educate, and empower individuals to reach their full potential."</p>
+                  </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="images/Story.png" alt="Story image">
+                    <h2 class="story">Our Story</h2>
+                  </div>
+                  <div class="flip-card-back">
+                    <p class="story-text">"To create a world where everyone has access to quality education."</p>
+                  </div>
+                </div>
+            </div>
+              
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="images/Vision.png" alt="Vision image">
+                    <h2 class="vision">Our Vision</h2>
+                  </div>
+                  <div class="flip-card-back">
+                    <p class="vision-text">"To create a world where everyone has access to quality education."</p>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Section -->
+        <section class="team-section">
+            <h3>Meet Our Team</h3>
+            <div class="teams">
+                <div v-for="member in teams" :key="member.id" class="member">
+                <img :src="member.image" alt="member.name" class="team-photo">
+                    <h4>{{ member.name }}</h4>
+                    <p>{{ member.role }}</p>
+                    <p>{{ member.bio }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <p>&copy; 2024 Learn Lounge. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="JS/app.js"></script>
+</body>
+</html>
