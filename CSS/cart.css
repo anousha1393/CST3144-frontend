@@ -1,0 +1,206 @@
+/* Container for two columns */
+.cart-page h3 {
+    font-size: 25px;
+}
+.cart-page h2 {
+    text-align: center;
+}
+.main-container {
+    min-width: 1000px;
+    min-height: 500px;
+}
+.main-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.cart-container1 {
+    min-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    float: left;
+  }
+
+  .cart-container2 {
+    margin: 0 auto;
+    padding: 20px;
+    min-width: 400px;
+    float: right;
+  }
+  
+  /* Column for Booking */
+  .booking {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Column for Coupon */
+  .coupon {
+    padding: 10px 20px 20px 20px;
+    width: 90%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .coupon button {
+    background-color: #2e2e2c;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 35%;
+    margin-left: 2px;
+    height: 30%;
+  }
+
+  .total a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000; /* Customize as needed */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .total p {
+    color: white;
+  }
+
+  .coupon button:hover, .total a:hover {
+    background-color: #ebdf43;
+  }
+
+  #couponCode {
+    padding: 7px;
+    margin-right: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 15px;
+    width: 200px;
+    text-align: center;
+  }
+
+  /* Total div below the two columns */
+  .total {
+    padding: 10px 20px 20px 20px;
+    width: 90%;
+    height: 260px;
+    margin: 20px auto 0;
+    color: #333;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+/* Back to Lessons Button */
+.booking button {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  background-color: transparent; 
+  position: relative;
+  font-size: 20px;
+}
+
+
+.booking button:hover {
+  color: #ebdf43;
+}
+
+#lessonImage {
+    width: 55px;
+    height: 55px;
+}
+
+/* Individual Cart Items */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Checkout Section Styling */
+.checkout-container {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin-left: 400px;
+    margin-top: 30px;
+  }
+  
+  .checkout-container h2 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .checkout-container .input-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .checkout-container .input-group label {
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 25px;
+  }
+  
+  .checkout-container .input-group input[type="text"], input[type=tel] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .checkout-container .input-group .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkoutButton {
+    background-color: #666;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .checkoutButton:hover {
+    background-color: #b58ebe;
+  }
+
+  .checkoutButton:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: center;
+  }
