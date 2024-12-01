@@ -67,6 +67,14 @@ header {
   transform-origin: left;
 }
 
+.home-button {
+  float: left;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  color: black;
+}
+
 .cart button {
   text-decoration: none;
   color: inherit;
