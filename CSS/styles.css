@@ -11,7 +11,7 @@ h1{
 
 h1, h3 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   color: #571966;
 }
 
@@ -30,7 +30,7 @@ header {
 
 .nav-links {
   display: flex;
-  margin-left: 445px;
+  align-items: right;
 }
 
 .nav-links a {
@@ -82,7 +82,7 @@ header {
   background-color: #CBC0D3;  
   position: relative;
   font-size: 20px;
-  margin-left: 412px;
+  margin-left: 1040px;
 }
 
 .cart button :hover {
