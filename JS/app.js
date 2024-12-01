@@ -88,7 +88,7 @@ new Vue({
     },
     async updateLessonSpaces(lessonId, newSpaces) {
       try {
-        const response = await fetch(`http://localhost:8080/M00908970/lessons/${lessonId}`, {
+        const response = await fetch(`https://cst3144-backend-application.onrender.com/M00908970/lessons/${lessonId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ new Vue({
     },
     async fetchLessons() {
       try {
-        const response = await fetch('http://localhost:8080/M00908970/lessons');
+        const response = await fetch('https://cst3144-backend-application.onrender.com/M00908970/lessons');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -124,7 +124,7 @@ new Vue({
     async searchLessons() {
       try {
         const response = await fetch(
-          `http://localhost:8080/M00908970/search?q=${encodeURIComponent(this.searchQuery)}`
+          `https://cst3144-backend-application.onrender.com/M00908970/search?q=${encodeURIComponent(this.searchQuery)}`
         );
 
         if (!response.ok) {
@@ -214,7 +214,7 @@ new Vue({
         };
     
         // Send the order to the backend via POST request
-        fetch('http://localhost:8080/M00908970/order', {
+        fetch('https://cst3144-backend-application.onrender.com/M00908970/order', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -230,7 +230,7 @@ new Vue({
               // Update available spaces for each lesson in the database
               for (const lesson of this.lessons) {
                 try {
-                  const response = await fetch(`http://localhost:8080/M00908970/lessons/${lesson._id}`, {
+                  const response = await fetch(`https://cst3144-backend-application.onrender.com/M00908970/lessons/${lesson._id}`, {
                     method: 'PUT',
                     headers: {
                       'Content-Type': 'application/json',
