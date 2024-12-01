@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Lounge - HomePage</title>
+  <!-- Vue.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/cart.css"> 
+</head>
+<body>
+  <div id="app">
+    <!-- Navigation Menu -->
+    <header>
+      <h1 v-text="sitename"><a href="#" class="logo"></a></h1>
+      <div class="header-container">
+        <!-- Navigation Links -->
+        <nav class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Lessons</a>
+          <a href="aboutUs.html">About Us</a>
+          <a href="#">Contact</a>
+        </nav>
+  
+        <!-- Cart Icon  -->
+        <div class="cart">
+          <button :disabled="cart.length === 0" @click="toggleCart" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" v-if="cart.length > 0">{{ cart.length }}</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sort Controls -->
+    <div v-if="!showCart" class="sort-controls">
+      <label for="sortAttribute">Sort By:</label>
+      <select v-model="sortAttribute" id="sortAttribute">
+        <option value="subject">Subject</option>
+        <option value="location">Location</option>
+        <option value="price">Price</option>
+        <option value="spaces">Availability</option>
+      </select>
+      
+      <!-- Search Bar -->
+      <div v-if="!showCart" class="search-bar">
+        <input type="text" v-model="searchQuery" placeholder="Search for lessons..." aria-label="Search" @input="searchLessons"/>
+        <i class="fas fa-search"></i>
+      </div>
+
+      <!-- Toggle Button for Ascending/Descending -->
+      <button @click="toggleSortOrder">
+        {{ sortOrder === 'asc' ? 'Ascending' : 'Descending' }}
+      </button>
+    </div>
+
+    <div v-if="!showCart" class="lessons">
+      <!-- Error Message -->
+      <div v-if="errorMessage" class="searchError">
+        {{ errorMessage }}
+      </div>
+      <div v-for="lesson in sortedLessons" :key="lesson.id" class="lesson">
+        <!-- Display Image if exists -->
+        <img v-if="lesson.image" :src="lesson.image" alt="Lesson Image" class="lesson-image" />
+        <h2>{{ lesson.subject }}</h2>
+        <hr><br>
+        <p><strong>Price:</strong> ${{ lesson.price }}</p>
+        <p><strong>Location:</strong> {{ lesson.location }}</p>
+        <p><strong>Available Spaces:</strong> {{ lesson.spaces }}</p> 
+        <p>
+          <strong>Rating:</strong>
+          <span class="stars">
+            <i v-for="star in 5" :key="star" class="fa-star" :class="lesson.rating >= star ? 'fas' : 'far'"></i>
+          </span>
+        </p>
+        <br>
+        <!-- Add to Cart Button -->
+        <button @click="bookLesson(lesson)" :disabled="lesson.spaces === 0">
+          {{ lesson.spaces > 0 ? 'Add to Cart' : 'No Spaces Left' }}
+        </button>
+      </div>
+    </div>
+
+    <div v-if="showCart" class="cart-page">
+      <h3>Your Cart <i class="fas fa-hand-point-down"></i></h3>
+      <div class="main-container">
+        <div class="cart-container1">
+          <div class="booking">
+            <div v-if="cart.length > 0">
+              <div v-for="(lesson, index) in cart" :key="lesson.id" class="cart-item">
+                <img id="lessonImage" :src="lesson.image" alt="Lesson Image"/>
+                <h2>{{ lesson.subject }}</h2>
+                <p><strong>Price:</strong> ${{ lesson.price }}</p>
+                <p><strong>Quantity:</strong> {{ lesson.quantity }}</p>
+                <p><strong>Location:</strong> {{ lesson.location }}</p>
+                <button @click="removeFromCart(index)"><i class="fas fa-trash"></i></button>
+              </div>           
+            </div>
+          </div>
+        </div>
+        <div class="cart-container2">
+          <div class="coupon">
+            <h2>Apply Coupon</h2>
+            <input type="text" v-model="couponCode" id="couponCode" placeholder="Enter your coupon code">
+            <button @click="applyCoupon">Apply</button>
+          </div>
+          <div class="total">
+            <h2>Order Summary</h2>
+            <p><strong>Subtotal:</strong> $<span>{{ subtotal.toFixed(2) }}</span></p>
+            <p><strong>Discount:</strong> -$<span>{{ discount.toFixed(2) }}</span></p>
+            <p><strong>Tax:</strong> $<span>{{ tax.toFixed(2) }}</span></p>
+            <hr>
+            <p><strong>Total:</strong> $<span>{{ finalTotal.toFixed(2) }}</span></p>
+            <a href="#checkout">Proceed to Checkout</a>
+          </div>
+        </div>
+      </div>
+      <div class="checkout-container">
+        <h2>Checkout</h2>
+        <div class="input-group">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" v-model="name" @input="validateName">
+            <span class="error-message" v-if="nameError">Please enter a valid name.</span>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" placeholder="Enter your phone number" v-model="phone" @input="validatePhone">
+            <span class="error-message" v-if="phoneError">Please enter a valid phone number.</span>
+          </div>
+        </div>
+        <button @click="submitOrder" class="checkoutButton" :disabled="!isCheckoutValid">Checkout</button>
+      </div>
+    </div> 
+
+     <!-- Modal 
+    <div v-if="modalVisible" class="modal-overlay">
+      <div class="modal-content">
+        <p>{{ modalMessage }}</p>
+        <button @click="closeModal">Close</button>
+      </div>
+    </div>-->
+     <!-- Modal -->
+  <div v-if="modalVisible" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>{{ modalTitle }}</h3>
+        <button class="close-btn" @click="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>{{ modalMessage }}</p>
+      </div>
+      <div class="modal-footer">
+        <button class="primary-btn" @click="closeModal">Close</button>
+      </div>
+    </div>
+  </div>
+   
+    <!-- Footer Section -->
+    <footer>
+      <!-- Social Media Icons -->
+      <div class="social-media">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <p>&copy; 2024 Learn Lounge. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="JS/app.js"></script>
+</body>
+</html>
