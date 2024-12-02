@@ -26,14 +26,14 @@ new Vue({
         name: 'Hisham Junaid',
         role: 'CEO & Founder',
         bio: 'Hisham is passionate about education and believes that every child deserves access to quality extracurricular activities.',
-        image: '../images/boy.png'
+        image: 'images/boy.png'
       },
       {
         id: 2,
         name: 'Anousha Tariq',
         role: 'Developer',
         bio: 'Anousha loves building cool and innovative web applications.',
-        image: '../images/girl.jfif'
+        image: 'images/girl.jfif'
       }
     ]
   },
@@ -126,18 +126,24 @@ new Vue({
         const response = await fetch(
           `https://cst3144-backend-application.onrender.com/M00908970/search?q=${encodeURIComponent(this.searchQuery)}`
         );
-
+    
         if (!response.ok) {
           throw new Error(`Search failed with status: ${response.status}`);
         }
-
+    
         const data = await response.json();
-        this.lessons = data; // Update lessons with search results
-        if(data.length===0){
-          this.errorMessage="The searched item doesn't exist. Please try again!"
+    
+        if (data.length === 0) {
+          this.errorMessage = 'No results found.';
+        } else {
+          this.errorMessage = ''; // Clear the error message
         }
+    
+        this.lessons = data; // Update lessons with search results
+    
       } catch (error) {
         console.error('Error fetching search results:', error);
+        this.errorMessage = 'Something went wrong. Please try again later.';
       }
     },
     bookLesson(lesson) {
@@ -154,7 +160,7 @@ new Vue({
         }
         // Deduct one space
         lesson.spaces--;
-        this.showModal('Successfull','You have successfully added ${lesson.subject} to your cart!');
+        this.showModal('Successfull',`You have successfully added ${lesson.subject} to your cart!`);
         console.log(this.cart);
       } else {
         this.showModal('Unsuccessfull','No more spaces available for this lesson.');
