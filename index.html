@@ -21,7 +21,7 @@
         <!-- Navigation Links -->
         <nav class="nav-links">
           <a href="#">Home</a>
-          <a href="htmlPages/aboutUs.html">About Us</a>
+          <a href="aboutUs.html">About Us</a>
         </nav>
   
         <!-- Cart Icon  -->
@@ -29,7 +29,7 @@
           <button :disabled="cart.length === 0" @click="toggleCart" aria-label="Shopping Cart">
             <i class="fas fa-shopping-cart"></i>
             <span class="cart-badge" v-if="cart.length > 0">{{ cart.length }}</span>
-          </a>
+          </button>
         </div>
       </div>
     </header>
@@ -146,7 +146,7 @@
   <div v-if="modalVisible" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>{{ modalTitle }}</h3>
+        <h3>{{ modalTitle }}!</h3>
         <button class="close-btn" @click="closeModal">&times;</button>
       </div>
       <div class="modal-body">
