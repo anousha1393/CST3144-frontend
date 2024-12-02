@@ -1,206 +1,230 @@
-/* Container for two columns */
+/* This CSS file is for the Index cart webpage designing contents */
+/* Font style for header 3 */
 .cart-page h3 {
     font-size: 25px;
 }
+
+/* Font style for header 2 */
 .cart-page h2 {
     text-align: center;
 }
+
+/* Container for two columns Styling */
 .main-container {
     min-width: 1000px;
     min-height: 500px;
 }
+
+/* Container for two columns after Styling */
 .main-container::after {
   content: "";
   display: block;
   clear: both;
 }
 
+/* cart Container 1 Styling */
 .cart-container1 {
-    min-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    float: left;
-  }
+  min-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  float: left;
+}
 
-  .cart-container2 {
-    margin: 0 auto;
-    padding: 20px;
-    min-width: 400px;
-    float: right;
-  }
+/* cart Container 2 Styling */
+.cart-container2 {
+  margin: 0 auto;
+  padding: 20px;
+  min-width: 400px;
+  float: right;
+}
   
-  /* Column for Booking */
-  .booking {
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Column for Coupon */
-  .coupon {
-    padding: 10px 20px 20px 20px;
-    width: 90%;
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
-  }
+/* Column for Booking Styling */
+.booking {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+}
 
-  .coupon button {
-    background-color: #2e2e2c;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    width: 35%;
-    margin-left: 2px;
-    height: 30%;
-  }
+/* Column for Coupon Styling */
+.coupon {
+  padding: 10px 20px 20px 20px;
+  width: 90%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+}
 
-  .total a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #000; /* Customize as needed */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-  }
-
-  .total p {
-    color: white;
-  }
-
-  .coupon button:hover, .total a:hover {
-    background-color: #ebdf43;
-  }
-
-  #couponCode {
-    padding: 7px;
-    margin-right: 5px;
-    font-size: 14px;
-    border: none;
-    border-radius: 15px;
-    width: 200px;
-    text-align: center;
-  }
-
-  /* Total div below the two columns */
-  .total {
-    padding: 10px 20px 20px 20px;
-    width: 90%;
-    height: 260px;
-    margin: 20px auto 0;
-    color: #333;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
-    text-align: center;
-  }
-
-/* Back to Lessons Button */
-.booking button {
-  text-decoration: none;
-  color: inherit;
+/* Coupon button Styling */
+.coupon button {
+  background-color: #2e2e2c;
+  font-weight: bold;
+  text-align: center;
+  color: white;
   border: none;
-  background-color: transparent; 
-  position: relative;
-  font-size: 20px;
+  border-radius: 6px;
+  width: 35%;
+  margin-left: 2px;
+  height: 30%;
 }
 
+/* Coupon code Styling */
+#couponCode {
+  padding: 7px;
+  margin-right: 5px;
+  font-size: 14px;
+  border: none;
+  border-radius: 15px;
+  width: 200px;
+  text-align: center;
+}
 
+/* Column for total Styling */
+.total {
+  padding: 10px 20px 20px 20px;
+  width: 90%;
+  height: 260px;
+  margin: 20px auto 0;
+  color: #333;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* total links Styling */
+.total a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000; /* Customize as needed */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* total paragraph Styling */
+.total p {
+  color: white;
+}
+
+/* Coupon button and total links hover Styling */
+.coupon button:hover, .total a:hover {
+  background-color: #ebdf43;
+}
+
+/* remove lesson Button Styling */
+.booking button {
+text-decoration: none;
+color: inherit;
+border: none;
+background-color: transparent; 
+position: relative;
+font-size: 20px;
+}
+
+/* remove lesson hover Button Styling */
 .booking button:hover {
-  color: #ebdf43;
+color: #ebdf43;
 }
 
+/* booking image Styling */
 #lessonImage {
-    width: 55px;
-    height: 55px;
+  width: 55px;
+  height: 55px;
 }
 
 /* Individual Cart Items */
 .cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: #ffffff;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px;
+background-color: #ffffff;
+margin-bottom: 10px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Checkout Section Styling */
 .checkout-container {
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    margin-left: 400px;
-    margin-top: 30px;
-  }
-  
-  .checkout-container h2 {
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .checkout-container .input-group {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  
-  .checkout-container .input-group label {
-    font-weight: bold;
-    color: #666;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 25px;
-  }
-  
-  .checkout-container .input-group input[type="text"], input[type=tel] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .checkout-container .input-group .field {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  margin-left: 400px;
+  margin-top: 30px;
+}
 
-  .checkoutButton {
-    background-color: #666;
-    color: #ffffff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 35px;
-    cursor: pointer;
-    width: 40%;
-    margin-left: 30%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .checkoutButton:hover {
-    background-color: #b58ebe;
-  }
+/* Checkout Section header 2 Styling */
+.checkout-container h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
 
-  .checkoutButton:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 12px;
-    margin-top: 10px;
-    text-align: center;
-  }
+/* Checkout Section form Styling */
+.checkout-container .input-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Checkout Section label Styling */
+.checkout-container .input-group label {
+  font-weight: bold;
+  color: #666;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+/* Checkout Section input Styling */
+.checkout-container .input-group input[type="text"], input[type=tel] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Checkout Section input fields Styling */
+.checkout-container .input-group .field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Checkout Section button Styling */
+.checkoutButton {
+  background-color: #666;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Checkout Section button hover Styling */
+.checkoutButton:hover {
+  background-color: #b58ebe;
+}
+
+/* Checkout Section button disabled Styling */
+.checkoutButton:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Checkout Section error message Styling */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center;
+}
