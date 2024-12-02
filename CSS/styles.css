@@ -1,3 +1,5 @@
+/* This CSS file is for the Index home and aboutUs webpage designing all contents */
+/* Website body Styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #CBC0D3;
@@ -5,10 +7,12 @@ body {
   padding: 20px;
 }
 
+/* Font style for header 1 */
 h1{
   font-size: 40px;
 }
 
+/* content style for header 1 and 3 */
 h1, h3 {
   text-align: center;
   margin-bottom: 0px;
@@ -16,11 +20,13 @@ h1, h3 {
 }
 
 /* Navigation Menu Styling */
+/* header styling */
 header {
   color: #571966;
   padding: 10px 20px;
 }
 
+/* header-container styling */
 .header-container {
   display: flex;
   align-items: center;
@@ -28,33 +34,36 @@ header {
   border-bottom: #F0EBD8 2px solid;
 }
 
+/* Navigation display styling */
 .nav-links {
   display: flex;
-  align-items: right;
 }
 
+/* Navigation links styling */
 .nav-links a {
   color: #F0EBD8;
   margin: 0 13px;
   text-decoration: none;
   font-size: 18px;
-  position: relative; /* For underline effect */
-  padding: 5px 0; /* For better clickable area */
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for color and scale */
+  position: relative; 
+  padding: 5px 0; 
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; 
 }
 
+/* Navigation links hover styling */
 .nav-links a:hover {
-  color: #571966; /* Change text color on hover */
-  text-decoration: none; /* No default underline */
-  transform: scale(1.05); /* Slightly enlarge the link */
+  color: #571966; 
+  text-decoration: none; 
+  transform: scale(1.05); 
 }
 
+/* Navigation links after styling */
 .nav-links a::after {
   content: '';
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #F0EBD8; /* Color of underline */
+  background-color: #F0EBD8; 
   bottom: 0;
   left: 0;
   transform: scaleX(0);
@@ -62,19 +71,14 @@ header {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Navigation links hover after styling */
 .nav-links a:hover::after {
-  transform: scaleX(1); /* Show underline on hover */
+  transform: scaleX(1); 
   transform-origin: left;
 }
 
-.home-button {
-  float: left;
-  font-size: 20px;
-  border: none;
-  background: transparent;
-  color: black;
-}
-
+/* Shopping Cart Styling */
+/* cart button styling */
 .cart button {
   text-decoration: none;
   color: inherit;
@@ -85,10 +89,12 @@ header {
   margin-left: 1040px;
 }
 
+/* cart button hover styling */
 .cart button :hover {
   color: #F0EBD8; 
 }
 
+/* cart button badge icon styling */
 .cart-badge {
   position: absolute;
   top: -17px;  
@@ -99,15 +105,18 @@ header {
   text-align: center;
 }
 
+/* Search functionality Styling */
+/* Search input Styling */
 .search-bar input {
   padding: 7px;
   margin-right: 5px;
   font-size: 14px;
   border: none;
   border-radius: 15px;
-  width: 300px; /* Width of the search bar */
+  width: 300px; 
 }
 
+/* Search error message Styling */
 .searchError {
   font-size: 20px;
   color: #2e2e2c;
@@ -116,7 +125,8 @@ header {
   margin-right: 10px;
 }
 
-/* Sort Controls */
+/* Sort Controls Styling */
+/* Sort Controls Styling */
 .sort-controls {
   text-align: center;
   margin: 20px 0px;
@@ -127,6 +137,7 @@ header {
   gap: 10px;
 }
 
+/* Sort Controls label Styling */
 .sort-controls label {
   font-weight: bold;
   margin-right: 10px;
@@ -134,6 +145,7 @@ header {
   float: left;
 }
 
+/* Sort Controls selection Styling */
 .sort-controls select {
   padding: 8px 15px 8px 30px;
   font-size: 14px;
@@ -146,6 +158,7 @@ header {
   margin-right: 220px;
 }
 
+/* Sort Controls button Styling */
 .sort-controls button {
   background-color: #2e2e2c;
   width: 140px;
@@ -158,17 +171,20 @@ header {
   margin-left: 290px;
 }
 
+/* Sort Controls button hover Styling */
 .sort-controls button:hover {
   background-color: #ebdf43;
 }
 
 /*Styling for Lessons*/
+/* lessons display styling */
 .lessons {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
+/* lessons content styling */
 .lesson {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -180,27 +196,32 @@ header {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* lessons image styling */
 .lesson-image {
   width: 90px;
   height: 90px;
   color: #858181;
 }
 
+/* lessons header styling */
 .lesson h2 {
   font-size: 24px;
   color: #626063;
 }
 
+/* lessons rating styling */
 .stars {
   color:#ebdf43;
   font-size: 1.2em;
 }
 
+/* lessons paragraph styling */
 .lesson p {
   margin: 5px 0;
   color: #626063;
 }
 
+/* lessons button styling */
 .lesson button {
   background-color: #ebdf43;
   color: #fff;
@@ -213,123 +234,21 @@ header {
   width: 80%;
 }
 
+/* lessons button hover styling */
 .lesson button:hover{
   background-color: #333;
 }
 
+/* lessons button disable styling */
 .lesson button:disabled {
   background-color: #ccc;
-}
-
-/* About Us Styling */
-.about-section, .team-section {
-  padding: 2rem;
-  background-color: white;
-  margin: 2rem auto;
-  width: 80%;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  
-}
-
-/* Basic styles for the about section */
-.about-section {
-  text-align: center;
-  padding: 20px;
-}
-
-/* Flip card container */
-.flip-card {
-  background-color: transparent; /* Transparent background */
-  width: 250px; /* Width of the card */
-  height: 150px; /* Height of the card */
-  perspective: 1000px; /* Add perspective effect */
-  display: inline-block; /* Align cards side by side */
-  margin: 30px;
-}
-
-/* Inner flip card */
-.flip-card-inner {
-  position: relative; /* Position for inner card */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  transition: transform 0.6s; /* Smooth flipping effect */
-  transform-style: preserve-3d; /* Preserve 3D for inner elements */
-  padding-right: 12px;
-}
-
-/* Flip card front */
-.flip-card-front,
-.flip-card-back {
-  position: absolute; /* Position absolute */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  backface-visibility: hidden; /* Hide back face when not flipped */
-  display: flex; /* Flexbox for centering */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  padding: 10px; /* Inner padding */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  border-radius: 8px; /* Rounded corners */
-}
-
-/* Front side styling */
-.flip-card-front { /* Green background for front */
-  color: black; /* White text */
-}
-
-/* Back side styling */
-.flip-card-back {
-  background-color: black; /* Red background for back */
-  color: white; /* White text */
-  transform: rotateY(180deg); /* Flip the back side */
-}
-
-/* Flipping effect on hover */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg); /* Flip card on hover */
-}
-
-
-.teams {
-  display: flex; /* Use Flexbox */
-  flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
-  gap: 30px; /* Optional: space between cards */
-  justify-content: center; /* Center the items horizontally */
-}
-
-.member {
-  width: 350px;
-  margin: 15px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.member img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 0 auto;
-}
-
-.member h4 {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.member p {
-  text-align: center;
-  margin: 5px 0;
 }
 
 /* Modal Styling */
 .modal-overlay {
   position: fixed;
-  inset: 0; /* shorthand for top: 0; left: 0; right: 0; bottom: 0 */
-  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay for a premium feel */
+  inset: 0; 
+  background-color: rgba(0, 0, 0, 0.7); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -341,26 +260,27 @@ header {
   background: #ffffff;
   width: 500px;
   border-radius: 8px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Elegant shadow */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); 
   overflow: hidden;
   animation: fade-in 0.3s ease-out;
 }
 
 /* Modal Header */
 .modal-header {
-  background-color: #1a202c; /* Dark gray for a professional look */
-  color: #ffffff;
+  background-color: #CBC0D3; 
   padding: 16px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #e2e8f0; /* Subtle divider */
+  border-bottom: 1px solid #e2e8f0; 
 }
 
 .modal-header h3 {
   margin: 0;
+  text-align: center;
   font-size: 1.5em;
   font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .close-btn {
@@ -372,27 +292,26 @@ header {
 }
 
 .close-btn:hover {
-  color: #f56565; /* Soft red for hover effect */
+  color: #571966; 
 }
 
 /* Modal Body */
 .modal-body {
-  padding: 20px;
+  padding: 15px;
   font-size: 1em;
-  color: #4a5568; /* Neutral gray for text */
+  color: #2d3748; 
   line-height: 1.6;
   text-align: center;
 }
 
 /* Modal Footer */
 .modal-footer {
-  padding: 16px 20px;
-  background: #f7fafc;
-  text-align: right;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .primary-btn {
-  background-color: #2d3748; /* Dark gray for buttons */
+  background-color: #CBC0D3; 
   color: white;
   border: none;
   padding: 10px 20px;
@@ -403,7 +322,7 @@ header {
 }
 
 .primary-btn:hover {
-  background-color: #4a5568; /* Subtle hover effect */
+  background-color: #571966; 
 }
 
 /* Animations */
@@ -418,6 +337,122 @@ header {
   }
 }
 
+/* About Us Page Styling */
+/* about section and team section styling for aboutUs.html */
+.about-section, .team-section {
+  padding: 2rem;
+  background-color: white;
+  margin: 2rem auto;
+  width: 80%;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Home button styling for aboutUs.html */
+.home-button {
+  float: left;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  color: black;
+}
+
+/* Basic styles for the about section */
+.about-section {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Flip card container */
+.flip-card {
+  background-color: transparent; 
+  width: 250px;
+  height: 150px; 
+  perspective: 1000px; 
+  display: inline-block; 
+  margin: 30px;
+}
+
+/* Inner flip card */
+.flip-card-inner {
+  position: relative; 
+  width: 100%; 
+  height: 100%; 
+  transition: transform 0.6s; 
+  transform-style: preserve-3d;
+  padding-right: 12px;
+}
+
+/* Flip card front */
+.flip-card-front,
+.flip-card-back {
+  position: absolute; 
+  width: 100%;
+  height: 100%; 
+  backface-visibility: hidden; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 8px; 
+}
+
+/* Front side styling */
+.flip-card-front {
+  color: black; 
+}
+
+/* Back side styling */
+.flip-card-back {
+  background-color: black;
+  color: white; 
+  transform: rotateY(180deg); 
+}
+
+/* Flipping effect on hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); 
+}
+
+/* teams styling */
+.teams {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 30px;
+  justify-content: center; 
+}
+
+/* member styling */
+.member {
+  width: 350px;
+  margin: 15px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* member image styling */
+.member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+/* member header styling */
+.member h4 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* member paragraph styling */
+.member p {
+  text-align: center;
+  margin: 5px 0;
+}
 
 /* Footer Styling */
 footer {
@@ -428,11 +463,13 @@ footer {
   margin-top: 40px;
 }
 
+/* social media container Styling */
 .social-media {
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
+/* social media links Styling */
 .social-media a {
   color: #fff;
   margin: 0 10px;
@@ -440,10 +477,12 @@ footer {
   text-decoration: none;
 }
 
+/* social media hover Styling */
 .social-media a:hover {
   color: #ebdf43;
 }
 
+/* social media icons Styling */
 .social-media i {
   font-size: 20px;
 }
