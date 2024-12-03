@@ -33,11 +33,7 @@ new Vue({
         name: 'Anousha Tariq',
         role: 'Developer',
         bio: 'Anousha loves building cool and innovative web applications.',
-        image: '/images/girl.jfif'
-      },
-      {
-        id: 3,
-        image: '/CST3144-frontend/images/boy.png'
+        image: '/CST3144-frontend/images/girl.jfif'
       }
     ]
   },
