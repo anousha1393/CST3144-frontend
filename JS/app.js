@@ -26,7 +26,7 @@ new Vue({
         name: 'Hisham Junaid',
         role: 'CEO & Founder',
         bio: 'Hisham is passionate about education and believes that every child deserves access to quality extracurricular activities.',
-        image: '../../images/boy.png'
+        image: '../images/boy.png'
       },
       {
         id: 2,
