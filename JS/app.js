@@ -37,9 +37,6 @@ new Vue({
       }
     ]
   },
-  // Log team image paths
-console.log('Team 1 Image Path:', data.teams[0].image);
-console.log('Team 2 Image Path:', data.teams[1].image);
   computed: {
     sortedLessons() {
       return this.lessons.slice().sort((a, b) => {
