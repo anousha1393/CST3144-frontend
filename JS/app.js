@@ -2,7 +2,7 @@ new Vue({
   el: '#app',
   data: {
     sitename: 'Learn Lounge',
-    sortAttribute: 'subject', 
+    sortAttribute: 'subject',
     sortOrder: 'asc',
     showCart: false,
     activeSection: 'personalDetails', // Keeps track of the currently open section
