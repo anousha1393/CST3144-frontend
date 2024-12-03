@@ -2,7 +2,6 @@
 This repository contains the frontend code for the Learn Lounge Project.
 
 # Overview
-Purpose
 This project was developed as a university assignment to demonstrate practical skills in Full Stack Development.
 
 # Scope
