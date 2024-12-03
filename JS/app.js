@@ -33,9 +33,11 @@ new Vue({
         name: 'Anousha Tariq',
         role: 'Developer',
         bio: 'Anousha loves building cool and innovative web applications.',
-        image: '/CST3144-frontend/images/girl.jfif'
+        image: '../images/girl.jfif'
       }
-    ]
+    ];
+    console.log('Boy Image Path:', boyImage.src);
+console.log('Girl Image Path:', girlImage.src);
   },
   computed: {
     sortedLessons() {
