@@ -255,11 +255,11 @@ new Vue({
               }
     
               // Clear the cart or redirect to a confirmation page here
-              this.cart = [];  // Clear the cart after successful submission
-              this.showCart = false;  // Hide cart
-              this.name = '';  // Clear name
-              this.phone = ''; // Clear phone
-              this.couponCode = ''; // Clear coupon code
+              this.name = '';
+              this.phone = '';
+              this.cart = [];
+              this.couponCode = '';
+              this.showCart = false;
               await this.fetchLessons(); // Fetch updated lessons
             } else {
               this.showModal('Unsuccessfull','Failed to submit order');
