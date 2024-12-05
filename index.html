@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Viewport for Responsive Design -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page Title -->
   <title>Learn Lounge - HomePage</title>
   <!-- Vue.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -13,6 +15,7 @@
   <link rel="stylesheet" href="CSS/cart.css"> 
 </head>
 <body>
+  <!-- This is the root element for the application -->
   <div id="app">
     <!-- Navigation Menu -->
     <header>
@@ -26,6 +29,7 @@
   
         <!-- Cart Icon  -->
         <div class="cart">
+          <!-- Cart Button with Badge -->
           <button :disabled="cart.length === 0" @click="toggleCart" aria-label="Shopping Cart">
             <i class="fas fa-shopping-cart"></i>
             <span class="cart-badge" v-if="cart.length > 0">{{ cart.length }}</span>
@@ -36,6 +40,7 @@
 
     <!-- Sort Controls -->
     <div v-if="!showCart" class="sort-controls">
+      <!-- Sort Dropdown -->
       <label for="sortAttribute">Sort By:</label>
       <select v-model="sortAttribute" id="sortAttribute">
         <option value="subject">Subject</option>
@@ -56,20 +61,24 @@
       </button>
     </div>
 
+    <!-- Lessons Section -->
     <div v-if="!showCart" class="lessons">
       <!-- Error Message -->
       <div v-if="errorMessage" class="searchError">
         {{ errorMessage }}
       </div>
+      <!-- Individual Lesson Card -->
       <div v-for="lesson in sortedLessons" :key="lesson.id" class="lesson">
         <!-- Display Image if exists -->
         <img v-if="lesson.image" :src="lesson.image" alt="Lesson Image" class="lesson-image" />
+        <!-- lesson attributes -->
         <h2>{{ lesson.subject }}</h2>
         <hr><br>
         <p><strong>Price:</strong> ${{ lesson.price }}</p>
         <p><strong>Location:</strong> {{ lesson.location }}</p>
         <p><strong>Available Spaces:</strong> {{ lesson.spaces }}</p> 
         <p>
+          <!-- Star Ratings -->
           <strong>Rating:</strong>
           <span class="stars">
             <i v-for="star in 5" :key="star" class="fa-star" :class="lesson.rating >= star ? 'fas' : 'far'"></i>
@@ -83,29 +92,35 @@
       </div>
     </div>
 
+    <!-- Cart Page -->
     <div v-if="showCart" class="cart-page">
       <h3>Your Cart <i class="fas fa-hand-point-down"></i></h3>
       <div class="main-container">
         <div class="cart-container1">
+          <!-- Cart Items -->
           <div class="booking">
             <div v-if="cart.length > 0">
+              <!-- Loop through cart items and display each -->
               <div v-for="(lesson, index) in cart" :key="lesson.id" class="cart-item">
                 <img id="lessonImage" :src="lesson.image" alt="Lesson Image"/>
                 <h2>{{ lesson.subject }}</h2>
                 <p><strong>Price:</strong> ${{ lesson.price }}</p>
                 <p><strong>Quantity:</strong> {{ lesson.quantity }}</p>
                 <p><strong>Location:</strong> {{ lesson.location }}</p>
+                <!-- Remove from Cart Button -->
                 <button @click="removeFromCart(index)"><i class="fas fa-trash"></i></button>
               </div>           
             </div>
           </div>
         </div>
         <div class="cart-container2">
+          <!-- Coupon Section -->
           <div class="coupon">
             <h2>Apply Coupon</h2>
             <input type="text" v-model="couponCode" id="couponCode" placeholder="Enter your coupon code">
             <button @click="applyCoupon">Apply</button>
           </div>
+          <!-- Order Summary -->
           <div class="total">
             <h2>Order Summary</h2>
             <p><strong>Subtotal:</strong> $<span>{{ subtotal.toFixed(2) }}</span></p>
@@ -113,24 +128,29 @@
             <p><strong>Tax:</strong> $<span>{{ tax.toFixed(2) }}</span></p>
             <hr>
             <p><strong>Total:</strong> $<span>{{ finalTotal.toFixed(2) }}</span></p>
+            <!-- Link to Proceed to Checkout -->
             <a href="#checkout">Proceed to Checkout</a>
           </div>
         </div>
       </div>
+      <!-- Checkout Section -->
       <div class="checkout-container">
         <h2>Checkout</h2>
         <div class="input-group">
+          <!-- Input for Customer Name -->
           <div class="field">
             <label for="name">Name</label>
             <input type="text" id="name" placeholder="Enter your name" v-model="name" @input="validateName">
             <span class="error-message" v-if="nameError">Please enter a valid name.</span>
           </div>
+          <!-- Input for Customer Phone -->
           <div class="field">
             <label for="phone">Phone</label>
             <input type="text" id="phone" placeholder="Enter your phone number" v-model="phone" @input="validatePhone">
             <span class="error-message" v-if="phoneError">Please enter a valid phone number.</span>
           </div>
         </div>
+        <!-- Checkout Button -->
         <button @click="submitOrder" class="checkoutButton" :disabled="!isCheckoutValid">Checkout</button>
       </div>
     </div> 
@@ -140,6 +160,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3>{{ modalTitle }}!</h3>
+          <!-- Close Button for the Modal -->
           <button class="close-btn" @click="closeModal">&times;</button>
         </div>
         <div class="modal-body">
@@ -162,7 +183,7 @@
       </div>
     </footer>
   </div>
-
+  
   <script src="JS/app.js"></script>
 </body>
 </html>
